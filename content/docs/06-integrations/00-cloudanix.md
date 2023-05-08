@@ -46,7 +46,7 @@ Additionally, you can start Jira workflows and target specific workloads from th
 
 ### Kubernetes 1.25 and higher
 
-When you use the Cloudanix pack with Kubernetes 1.25 and higher, you need to add the **Spectro Namespace Labeler** add-on pack to your cluster profile. After you create the cluster profile, you then apply it to your cluster. 
+When you use the Cloudanix 1.0.x pack with Kubernetes 1.25 and higher, you need to add the **Spectro Namespace Labeler** add-on pack to your cluster profile. After you create the cluster profile, you then apply it to your cluster. 
 
 Use the following information to find the **Spectro Namespace Labeler** add-on pack.
 
@@ -113,7 +113,7 @@ From the **Workloads** page, click the **Risks** tab to view a list of failed th
 
 - CPUs: 0.5
 - Memory: 256 MiB
-- Kubernetes 1.19.x to 1.26.x
+- Kubernetes 1.19.x to 1.24.x
 - Kernel version 4.5 and higher
 
 ## Parameters
