@@ -41,20 +41,25 @@ Additionally, you can start Jira workflows and target specific workloads from th
 
 - CPUs: 0.5
 - Memory: 256 MiB
-- Kubernetes 1.19.x to 1.24.x
+- Kubernetes 1.19.x to 1.26.x
 - Kernel version 4.5 and higher
 
-## Installing on Kubernetes 1.25 and higher.
+### Kubernetes 1.25 and higher
 
-Installing on Kubernetes 1.25 and higher requires an additional pack called Spectro Namespace Labeler to be installed. Here are the steps to install.
-- In palette create a cluster profile
-- Select the type as ``Add-on``
-- Click ``Add New Pack``
-- Select ``Pack Type`` as ``System App``
-- Select ``Registry`` as ``Public Repo``
-- Select ``Pack Name`` as ``Spectro Namespace Labeler``
-- The ``yaml`` should look like this:
-  ```
+When you use the Cloudanix pack with Kubernetes 1.25 and higher, you need to add the **Spectro Namespace Labeler** add-on pack to your cluster profile. After you create the cluster profile, you then apply it to your cluster. 
+
+Use the following information to find the **Spectro Namespace Labeler** add-on pack.
+
+- **Pack Type**: System App
+- **Registry**: Public Repo
+- **Pack Name**: Spectro Namespace Labeler
+- **Pack Version**: 1.0.x or higher
+
+
+Below is the YAML file for the **Spectro Namespace Labeler** add-on pack. No action is required.
+<br />
+
+  ```yaml
   pack:
   namespace: cluster-{{ .spectro.system.cluster.uid }}
 
@@ -65,7 +70,8 @@ Installing on Kubernetes 1.25 and higher requires an additional pack called Spec
       labels:
         cloudanix: pod-security.kubernetes.io/enforce=privileged,pod-security.kubernetes.io/enforce-version=v1.26
   ```
-- When adding the Cloudanix pack add the above labels pack also to the cluster
+
+As a final step, apply the cluster profile to your cluster.
 
 ## Parameters:
 
@@ -107,7 +113,7 @@ From the **Workloads** page, click the **Risks** tab to view a list of failed th
 
 - CPUs: 0.5
 - Memory: 256 MiB
-- Kubernetes 1.19.x to 1.24.x
+- Kubernetes 1.19.x to 1.26.x
 - Kernel version 4.5 and higher
 
 ## Parameters
